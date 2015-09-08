@@ -22,11 +22,26 @@ public class AreaCalculatorService {
         return area;
     }
     
-    public double getCircleArea(double radius) {
-        return (Math.PI * Math.pow(radius, 2));
+    public double getCircleArea(String rad1) {
+        double radius, area;
+        try {
+            radius = Double.parseDouble(rad1);
+            area = (Math.PI * Math.pow(radius, 2));
+        } catch (Exception e) {
+            area = 0;
+        }
+        return area;
     }
     
-    public double getTriangleArea(double base, double height) {
-        return ((1.0/2.0)*base*height);
+    public double getTriangleArea(String bas1, String hei1) {
+        double base, height, area;
+        try {
+            base = Double.parseDouble(bas1);
+            height= Double.parseDouble(hei1);
+            area = ((1.0/2.0)*base*height);
+        } catch (Exception e) {
+            area = 0;
+        }
+        return area;
     }
 }

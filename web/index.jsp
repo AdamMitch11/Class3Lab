@@ -9,14 +9,21 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Calculator Lab #1</title>
+        <title>Calculator Lab</title>
     </head>
     <body>
         <h1>Calculate the Area of a Rectangle</h1>
         <p>
-        <form id="rectangle" action="POST">
-            
+            <!-- fix spacing-->
+        <form id="rectangleForm" method=POST action="controller">
+            Length: <input type ="text" name="length"> <br>
+            Width: <input type ="text" name="width"> <br>
+            <button type="button" value="calcRectangle">Calculate Area</button>
         </form>
+        <hr>
+        <h1>Calculate the Area of a Circle</h1>
+        <hr>
+        <h1>Calculate the Area of a Triangle</h1>
         </p>
     </body>
 </html>
