@@ -7,6 +7,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,11 +31,39 @@ public class controller extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+    private static String RESULTS_PAGE = "/index.jsp";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
         AreaCalculatorService acs = new AreaCalculatorService();
+        String calculatorType = request.getParameter("formType");
+        
+        if (calculatorType.equals("rectangle")) {
+            String length = request.getParameter("length");
+            String width = request.getParameter("width");
+            double rectangleArea = acs.getRectangleArea(length, width);
+            request.setAttribute("rectangleArea", rectangleArea);
+        }
+        
+        if (calculatorType.equals("circle")){
+            String radius = request.getParameter("radius");
+            double circleArea = acs.getCircleArea(radius);
+            request.setAttribute("circleArea", circleArea);
+        }
+        
+        if (calculatorType.equals("triangle")){
+            String base = request.getParameter("base");
+            String height = request.getParameter("height");
+            double triangleArea = acs.getTriangleArea(base, height);
+            request.setAttribute("triangleArea", triangleArea);
+        }
+        
+        RequestDispatcher view =
+                request.getRequestDispatcher(RESULTS_PAGE);
+        view.forward(request, response);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

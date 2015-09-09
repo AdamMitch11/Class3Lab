@@ -10,7 +10,7 @@ package model;
  * @author Adam
  */
 public class AreaCalculatorService {
-    public double getSquareArea(String len1, String wid1){
+    public double getRectangleArea(String len1, String wid1){
         double length, width, area;
         try {
             length = Double.parseDouble(len1);
