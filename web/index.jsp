@@ -15,40 +15,42 @@
         <title>Calculator Lab</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     </head>
+    <div class="container">
     <body>
-        <h1>Calculate the Area of a Rectangle</h1>
+        <h2 class="text-center">Geometry Area Calculator <small> "Magic, usually"</small></h2>
+        <h3>Calculate the Area of a Rectangle</h3>
         <p>
             <!-- fix spacing-->
-        <form name="rectangleForm" method=POST action="controller">
+        <form class="form-group" name="rectangleForm" method=POST action="controller">
             <input type="hidden" id="formType" name="formType" value="rectangle">
-            Length: <input type ="text" name="length" placeholder= "Enter Length"> <br>
-            Width: <input type ="text" name="width" placeholder="Enter Width"> <br>
-            <button type="submit" value="calcRectangleSubmit">Calculate Area</button>
+            Length: <input class="form-control" type ="text" name="length" placeholder= "Enter Length"> <br>
+            Width: <input class="form-control" type ="text" name="width" placeholder="Enter Width"> <br>
+            <button class="btn btn-primary" type="submit" value="calcRectangleSubmit">Calculate Area</button>
         </form>
         ${rectangleArea}
         
         <hr>
         
-        <h1>Calculate the Area of a Circle</h1>
-        <form name="circleForm" method=POST action="controller">
+        <h3>Calculate the Area of a Circle</h3>
+        <form class="form-group" name="circleForm" method=POST action="controller">
             <input type="hidden" id="formType" name="formType" value="circle">
-            Radius: <input type ="text" name="radius" placeholder= "Enter Radius"> <br>
-            <button type="submit" value="calcCircleSubmit">Calculate Area</button>
+            Radius: <input class="form-control" type ="text" name="radius" placeholder= "Enter Radius"> <br>
+            <button class="btn btn-primary" type="submit" value="calcCircleSubmit">Calculate Area</button>
         </form>
         
         ${circleArea}
         <hr>
         
-        <h1>Calculate the Area of a Triangle</h1>
-        <form name="triangleForm" method=POST action="controller">
+        <h3>Calculate the Area of a Triangle</h3>
+        <form class="form-group" name="triangleForm" method=POST action="controller">
             <input type="hidden" id="formType" name="formType" value="triangle">
-            Base: <input type ="text" name="base" placeholder= "Enter Base"> <br>
-            Height: <input type ="text" name="height" placeholder="Enter Height"> <br>
-            <button type="submit" value="calcTriangleSubmit">Calculate Area</button>
+            Base: <input class="form-control" type ="text" name="base" placeholder= "Enter Base"> <br>
+            Height: <input class="form-control" type ="text" name="height" placeholder="Enter Height"> <br>
+            <button class="btn btn-primary" type="submit" value="calcTriangleSubmit">Calculate Area</button>
         </form>
         
         ${triangleArea}
         </p>
-        
+    </div>
     </body>
 </html>
